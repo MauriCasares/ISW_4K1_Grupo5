@@ -3,3 +3,5 @@ Apellido	Nombre 		Legajo		Mail
 Casares Diaz	Mauricio J.	68357		mauricio.casaresdiaz@gmail.com
 
 Cahuana 	Keyssi		69045		cahuana.key@gmail.com
+
+Pinchiroli	Santiago	68613		santiagopinchi@gmail.com
