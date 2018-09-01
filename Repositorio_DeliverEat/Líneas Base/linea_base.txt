@@ -1,4 +1,4 @@
-La primera linea base se planifacará despues de finalizar el primer sprint que esta dado por un sprint backlog compuesto de 5 US escogidas como fundamentales, para un primer entregable para el cliente. 
+Una de las líneas base se definirá despues de finalizar un sprint que esta dado por un sprint backlog compuesto de 5 US escogidas como fundamentales, para un primer entregable para el cliente. 
 estas US son:
 -registrar cliente
 -registrar pedido (comercios adheridos)
