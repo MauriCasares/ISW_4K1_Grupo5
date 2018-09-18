@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<head>
+    <title>DeliverEat</title>
+
+    <meta name="viewport" content="width=device-width " />
+
+    <link rel="icon" type="image/png" href="../Img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../Img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../Img/favicon-16x16.png" sizes="16x16" />
+
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="../CSS/estilos.css" rel="stylesheet" />
+</head>
+<body ng-app="DeliverEat" ng-controller="PedidoLoQueSeaController">
+
+    <header> <!-- Encabezado -->
+        <div class="container-fluid row">
+            <div class="col-sm-4">
+            
+            </div>
+
+            <div class="col-sm-4 text-center">
+                <img src="../Img/ICONO.png" width="70"/>
+                {{Titulo}}
+            </div>
+
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+    </header>
+    <br/>
+    <div class="container-fluid"> <!-- Cuerpo -->
+                 
+            
+            <!-- FILA DIRECCIONES -->
+            <div class="row">
+                <div class="col-sm-4"></div>
+
+                <div class="col-sm-4 text-center rosita">
+                    <label>¡Direcciones!</label>
+                </div>
+
+                <div class="col-sm-4"></div>
+            </div>
+            <br/>
+
+            <!-- FILA CIUDAD -->
+            <div class="row">
+                <div class="col-sm-3"></div>
+
+                <div class="col-sm-3 text-right">
+                    <label>Ciudad:</label>
+                </div>
+
+                <div class="col-sm-3">
+                    <select name="ciudad" ng-model="Ciudad">
+                        <option value="1" selected="selected">Buenos Aires</option>
+                        <option value="2">Córdoba</option>
+                        <option value="3">Mendoza</option>
+
+                    </select>
+                </div>
+
+                <div class="col-sm-3"></div>
+            </div>
+
+            <!-- FILA DIRECCION ENTREGA -->
+            <div class="row">
+                <div class="col-sm-3"></div>
+
+                <div class="col-sm-3 text-right">
+                    <label>Dirección de entrega del paquete:</label>
+                </div>
+
+                <div class="col-sm-3">
+                    <input type="text" class="textBox" ng-model="DireccionEntrega"/>&nbsp&nbsp&nbsp
+                    <a href="https://www.google.com/maps" target=”_blank”> <img src="../Img/IconoUbicacion.png" width=27px /> </a>
+                </div>
+
+                <div class="col-sm-3"></div>
+            </div>
+
+            <!-- FILA DIRECCION RETIRO -->
+            <div class="row">
+                <div class="col-sm-3"></div>
+
+                <div class="col-sm-3 text-right">
+                    <label>Dirección de retiro del paquete:</label>
+                </div>
+
+                <div class="container-fluid col-sm-3">
+                    <input type="text" class="textBox" ng-model="DireccionRetiro" />&nbsp&nbsp&nbsp
+                    <a href="https://www.google.com/maps" target=”_blank” > <img src="../Img/IconoUbicacion.png" width=27px /> </a>
+                </div>
+
+                <div class="col-sm-3"></div>
+            </div>
+            
+            <br/>
+            <!-- FILA FilaPedido -->
+            <div class="row">
+                <div class="col-sm-4"></div>
+
+                <div class="col-sm-4 text-center rosita">
+                    <label>Pedido de "LO QUE SEA"</label>
+                </div>
+
+                <div class="col-sm-4"></div>
+            </div>
+            <br/>
+
+            <!-- FILAS DETALLE PEDIDO -->
+            <div class="row" ng-repeat="element in Pedido">
+                <div class="col-sm-3"></div>
+
+                <div class="col-sm-3 text-right">
+                    <label>Descripción artículo {{element.nroDetalle}}: </label>
+                </div>
+
+                <div class="col-sm-2">
+                    <input  class="textBox" type="text" ng-model="element.detalle" ng-change="analizarCambio(element)" />
+                    <button ng-click="eliminar(element)"> <img src="../Img/ICONOCANCELAR.png" width="20px" /> </button>
+                </div>
+
+                <div class="col-sm-1 text-left">
+                    <div class="image-upload">
+                        <label for="file-input">
+                            <img src="../Img/ICONOFOTO.png" alt="Click aquí para subir tu foto" title="Click aquí para subir tu foto">
+                        </label>
+
+                        <input id="file-input" type="file" name="foto" accept=".png,.jpg" ng-model="elemento.fotografia"/>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 text-left">
+                    
+                </div>
+            </div>
+
+        <br />
+        <!-- FILA FilaPedido -->
+        <div class="direccionRetiro row">
+            <div class="col-sm-4"></div>
+
+            <div class="col-sm-4 text-center rosita">
+                <label>Especificación de Pago</label>
+            </div>
+
+            <div class="col-sm-4"></div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-3 text-right">
+                <label class="advertencia">El Envío posee un costo de:</label>
+            </div>
+
+            <div class="col-sm-3">
+                ${{CostoEnvio}}
+            </div>
+
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-3 text-right">
+                <label>Seleccione tipo de pago: </label>
+            </div>
+
+            <div class="col-sm-3">
+                <select name="Tipo Pago" ng-model="TipoPago">
+                    <option value="1">Efectivo</option>
+                    <option value="2">Tarjeta</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" ng-show="TipoPago == 1">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3 text-right">
+                <label>Ingrese el monto con el que abonará: </label>
+            </div>
+
+            <div class="col-sm-3">
+                <input type="text" ng-model="MontoAbonar" />
+            </div>
+
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" ng-show="TipoPago == 2">
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-3 text-right">
+                <label>Tarjeta: </label>
+            </div>
+
+            <div class="col-sm-3">
+                <select name="Tipo Tarjeta" ng-model="TipoTarjeta">
+                    <option value="1">VISA</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" ng-show="TipoPago == 2">
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-3 text-right">
+                <label>Ingrese los últimos 8(ocho) dígitos: </label>
+            </div>
+
+            <div class="col-sm-3">
+                <input maxlength="8" type="password" ng-model="OchoDigitos" />
+            </div>
+
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" ng-show="TipoPago == 2">
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-3 text-right">
+                <label>Código seguridad (3(tres) dígitos en el dorso): </label>
+            </div>
+
+            <div class="col-sm-3">
+                <input maxlength="3" type="password" ng-model="CodigoSeguridad" />
+            </div>
+
+            <div class="col-sm-3"></div>
+        </div>
+
+
+        <div class="row" ng-show="TipoPago == 2">
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-3 text-right">
+                <label>Fecha de Vencimiento (MM/AA): </label>
+            </div>
+
+            <div class="col-sm-3">
+                <input maxlength="2" type="password" ng-model="MesVencimiento" class="pass" />
+                <input maxlength="2" type="password" ng-model="AnoVencimiento" class="pass" />
+            </div>
+
+            <div class="col-sm-3"></div>
+        </div>
+
+        <br />
+        <!-- FILA CONFIRMACIÓN DE PAGO -->
+        <div class=" row">
+            <div class="col-sm-4"></div>
+
+            <div class="col-sm-4 text-center rosita">
+                <label>CONFIRMAR PEDIDO</label>
+            </div>
+
+            <div class="col-sm-4"></div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-3 text-right">
+                
+                <button type="button" class="btn btn-danger" ng-click="CancelarPedido()">Cancelar Pedido</button>
+            </div>
+
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-success" ng-click="ConfirmarPedido()">Confirmar Pedido</button>
+            </div>
+
+            <div class="col-sm-3"></div>
+        </div>
+
+
+
+
+    </div>
+   
+
+    <script src="../JS/Scripts/jquery-1.9.1.js"></script>
+    <script src="../JS/Scripts/bootstrap.min.js"></script>
+    <script src="../JS/Scripts/angular.js"></script>
+    <script src="../JS/App/DeliverEat.js"></script>
+</body>

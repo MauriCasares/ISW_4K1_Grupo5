@@ -1,0 +1,34 @@
+﻿header{
+    background-color:lightpink;
+    color: #FF5561;
+    font-size:40px;
+}
+
+.advertencia{
+    color:red;
+}
+
+.rosita{
+    background-color:#FF5561;
+    color: white;
+    font-size:15px;
+}
+
+.textBox{
+    width:245px;
+}
+
+.pass{
+    width:30px;
+}
+
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+    width: 30px;
+    cursor: pointer;
+}

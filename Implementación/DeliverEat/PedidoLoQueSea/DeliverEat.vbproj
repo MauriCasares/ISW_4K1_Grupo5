@@ -58,8 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CSS\" />
-    <Folder Include="JS\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -85,7 +84,20 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\estilos.css" />
     <Content Include="HTML\PedidoLoQueSea.html" />
+    <Content Include="Img\favicon-16x16.png" />
+    <Content Include="Img\favicon-32x32.png" />
+    <Content Include="Img\favicon-96x96.png" />
+    <Content Include="Img\ICONO.png" />
+    <Content Include="Img\ICONOCANCELAR.png" />
+    <Content Include="Img\ICONOFOTO.png" />
+    <Content Include="Img\IconoUbicacion.png" />
+    <Content Include="JS\App\DeliverEat.js" />
+    <Content Include="JS\Scripts\angular.js" />
+    <Content Include="JS\Scripts\bootstrap.min.js" />
+    <Content Include="JS\Scripts\jquery-1.9.1.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
