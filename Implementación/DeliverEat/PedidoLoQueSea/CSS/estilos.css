@@ -14,21 +14,22 @@
     font-size:15px;
 }
 
-.textBox{
-    width:245px;
-}
-
-.pass{
-    width:30px;
-}
-
 .image-upload > input
 {
     display: none;
+}
+
+.imagen {
+    width: 20px;
 }
 
 .image-upload img
 {
     width: 30px;
     cursor: pointer;
+}
+
+.pass
+{
+    width: 30px;
 }
