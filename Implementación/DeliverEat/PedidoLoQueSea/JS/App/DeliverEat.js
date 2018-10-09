@@ -39,32 +39,32 @@ myApp.controller("PedidoLoQueSeaController",
         $scope.analizarCambio = function (objeto) {
             if (!objeto.bandera) {
                   objeto.bandera = true;
-                  $scope.agregar();
+                  $scope.Agregar();
             }
             else
             {
                 if (objeto.detalle.length == 0) {
-                    $scope.eliminar(objeto);
+                    $scope.Eliminar(objeto);
                 }
             }
         };
 
-        $scope.agregar = function () {
+        $scope.Agregar = function () {
              $scope.CantidadDetalles = ($scope.CantidadDetalles + 1);
              $scope.Pedido.push({ nroDetalle: $scope.CantidadDetalles, detalle: "", bandera: false, fotografia: undefined });
              $scope.CostoPedido = $scope.CostoPedido + 100;
         };
 
-        $scope.eliminar = function (objeto) {
+        $scope.Eliminar = function (objeto) {
             if (objeto.nroDetalle < $scope.CantidadDetalles) {
                 $scope.Pedido.splice(objeto.nroDetalle - 1, 1);
                 $scope.CantidadDetalles = ($scope.CantidadDetalles - 1);
-                $scope.reestructurarIndices();
+                $scope.ReestructurarIndices();
                 $scope.CostoPedido = $scope.CostoPedido - 100;
             }
         };
 
-        $scope.reestructurarIndices = function () {
+        $scope.ReestructurarIndices = function () {
             for (var i = 0; i < $scope.CantidadDetalles; i++) {
                 $scope.Pedido[i].nroDetalle = i + 1;
             }
