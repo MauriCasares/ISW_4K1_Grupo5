@@ -1,11 +1,11 @@
-Apellido	Nombre 		Legajo		Mail
+﻿Apellido	Nombre 		Legajo		Mail
 
-Casares Diaz	Mauricio Jo.	68357		mauricio.casaresdiaz@gmail.com
+Casares Diaz	Mauricio Jo.	68.357		mauricio.casaresdiaz@gmail.com
 
-Cahuana 	Keyssi		69045		cahuana.key@gmail.com
+Cahuana 	Keyssi		69.045		cahuana.key@gmail.com
 
-Pinchiroli	Santiago	68613		santiagopinchi@gmail.com
+Pinchiroli	Santiago	68.613		santiagopinchi@gmail.com
 
-Ribero		Francisco M. 	67807		riberomr@gmail.com
+Ribero		Francisco M. 	67.807		riberomr@gmail.com
 
-Ludueña   Joaquín D.  65910  joaquinluduena7@gmail.com
+Ludueña   	Joaquín D.  	65.910  	joaquinluduena7@gmail.com
