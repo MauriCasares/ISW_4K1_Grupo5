@@ -5,5 +5,3 @@ estas US son:
 -registrar pago
 -registrar comercio adherido
 -registrar cadete
-
-
